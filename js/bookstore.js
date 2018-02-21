@@ -71,6 +71,13 @@ var appendToPage = (book) => {
      $("#bookList").append('<br>')
 }
 
+var appendToJSON = () => {
+  // Append to JSON file the current bookInfo object
+  var bookJSON = JSON.stringify(bookInfo);
+
+  // localStorage.setItem ( 'bookstore.json', bookJSON );
+}
+
 $( "form" ).on( "submit", ( event ) => {
     var data = $( event.target ).serializeArray();
     var formObject = {};
@@ -90,7 +97,6 @@ $( "form" ).on( "submit", ( event ) => {
     } );
     bookInfo.push( formObject ); // Adding book to object array
     appendToPage( formObject ); // Adding book info to the webpage
+    appendToJSON( ); // Adding book to JSON file
     $('form')[0].reset(); // Resetting form
-console.log(formObject);
-console.log(bookInfo);
 });
