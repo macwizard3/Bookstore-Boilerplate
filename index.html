@@ -16,55 +16,45 @@
 <body>
   
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Bookstore</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#book1">Books</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#audiobook1">Audiobooks</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#music1">Music</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#form">Submit</a>
-      </li>
+    <!-- <a class="navbar-brand" href="#">Bookstore</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#bookHL">Books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#audiobookHL">Audiobooks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#musicHL">Music</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#submitRef">Submit</a>
+        </li>
       </ul>
     </div>
-</nav>
+  </nav>
 
 <img id="top-image" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=31b0b078f5da0a750f05e27c6d9df39b&auto=format&fit=crop&w=2053&q=80">
 <br>
 
 <h2 class="welcome">Welcome to the Bookstore!</h2>
 <p class="welcome">Please feel free to add your favorite books, audiobooks and music below</p>
-<div class="content-area" id="bookList">
 
+  <h1 id="bookHL">Books</h1>
+  <div class="content-area" id="bookList"></div>
 
-</div>
+  <h1 id="audiobookHL">Audiobooks</h1>
+  <div class="content-area" id="audiobookList"></div>
 
-<div class="content-area" id="audiobookList">
-
-
-</div>
-
-<div class="content-area" id="musicList">
-
-
-</div>
-
-
-
-
-
+  <h1 id="musicHL">Music</h1>
+  <div class="content-area" id="musicList"></div>
 
 <br>
 <div class="card">
@@ -72,9 +62,9 @@
       <form action="#">
       <!-- <form action="form-responses/new" method="POST"> -->
         <input type="text" class="form-control" name="title" placeholder="Title" autofocus></br>
-        <input type="text" class="form-control"name="author" placeholder="Author"></br>
-        <input type="number" class="form-control"name="price" placeholder="$9.99"></br>
-        <input type="text" class="form-control"name="imageUrl" placeholder="http://via.placeholder.com/125x185"></br>
+        <input type="text" class="form-control" name="author" placeholder="Author"></br>
+        <input type="number" class="form-control" step="0.01" name="price" placeholder="$9.99"></br>
+        <input type="text" class="form-control" name="imageUrl" placeholder="http://via.placeholder.com/125x185"></br>
         <label class="text-white">Selling Points:</label></br>
         <input type="text" class="form-control" name="sP-1" placeholder="It's a great value"></br>
         <input type="text" class="form-control" name="sP-2" placeholder="It's a great read"></br>
@@ -89,7 +79,7 @@
         </label>
         </div>
 
-    <a href="#home"><input type="submit" class="btn btn-success"value="Add a book to the store" </a>
+    <input id="submitRef" type="submit" class="btn btn-success" value="Add a book to the store">
 
   </form>
   </div>
