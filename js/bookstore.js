@@ -49,7 +49,7 @@ var appendToPage = ( prod, type ) => {
   appendStr += '<div class="book-price"><li>Price: ' + prod.price + '</li></div>';
   appendStr += '<div class="book-picture"><li><img src="' + prod.imageUrl + '" alt="Book Image"></li></div>';
   appendStr += '</ul>';
-
+console.log(prod.price);
   // Loop through array to get selling points.
   appendStr += '<div class="book-sellingpoints"><p>Selling Points: </p><ul>';
   prod.sellingPoints.forEach ( function ( sPoint ) {
@@ -109,13 +109,8 @@ var pageFiller = () => {
 
   // Refreshing the product type div's and re-adding the hyperlinks
   $('#bookList').empty();
-  $('#bookList').append('<a href="#book1"><h1>Books</h1></a>');
-
   $('#audiobookList').empty();
-  $('#audiobookList').append('<a href="#audiobook1"><h1>Audiobooks</h1></a>');
-
   $('#musicList').empty();
-  $('#musicList').append('<a href="#music1"><h1>Music</h1></a>');
 
   // Appending the books array
   for (var i=1; i<prodInfo.books.length; i++){
