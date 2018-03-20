@@ -34,6 +34,22 @@ var divType = {
   "Audiobook": "#audiobookList"
 };
 
+// Saving JSON data via download
+// Code adapted from StackOverflow (http://jsfiddle.net/sz76c083/1)
+var createJSONDownload = () => {
+  var data = "text/json;charset=utf-8,"
+    + encodeURIComponent(JSON.stringify(prodInfo));
+
+  var a = document.createElement('a');
+  a.href = 'data:' + data;
+  a.download = 'products.json'; // Name of file
+  a.innerHTML = 'Download compiled JSON file.';
+
+  $('#downloadJSON').empty();
+  var container = document.getElementById('downloadJSON');
+  container.appendChild(a);
+}
+
 // jQuery code for appending product to div based on type selected
 var appendToPage = ( prod, type ) => {
   // prod is prodInfo.type address
@@ -49,7 +65,7 @@ var appendToPage = ( prod, type ) => {
   appendStr += '<div class="book-price"><li>Price: ' + prod.price + '</li></div>';
   appendStr += '<div class="book-picture"><li><img src="' + prod.imageUrl + '" alt="Book Image"></li></div>';
   appendStr += '</ul>';
-console.log(prod.price);
+
   // Loop through array to get selling points.
   appendStr += '<div class="book-sellingpoints"><p>Selling Points: </p><ul>';
   prod.sellingPoints.forEach ( function ( sPoint ) {
@@ -141,6 +157,9 @@ $( "form" ).on( "submit", function ( event ) {
 
   // Build or rebuild list of products based on prodInfo
   pageFiller ();
+
+  // Updating JSON download pageFiller
+  createJSONDownload ();
 
   // Resetting form
   $('form')[0].reset();
