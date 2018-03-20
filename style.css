@@ -1,0 +1,56 @@
+/*The reference of book refers to all books*/
+
+h3 {
+  text-decoration: underline;
+  font-style: Verdana;
+  font-weight: bolder;
+  font-size: 30px,
+
+}
+
+p {
+  font-weight: bold;
+  font-style
+}
+
+
+li {
+  list-style: none;
+  padding-left:0pt;
+  font-style: Times;
+}
+
+img {
+box-shadow: 5px 5px 5px grey;
+position: relative;
+}
+
+#top-image {
+box-shadow: none;
+height: 500px;
+width: 100%;
+}
+
+.welcome {
+  text-align: center;
+}
+
+
+.book-author {
+font-family: Verdana
+
+}
+.book-name {
+  font-family: Verdana;
+}
+
+.book-price {
+  font-family: Verdana;
+}
+
+
+
+.form {
+  margin-left:10%;
+  margin-right:10%;
+}
